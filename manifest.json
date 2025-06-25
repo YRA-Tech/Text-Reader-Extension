@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "Text Reader Extension",
+  "version": "0.2",
+  "description": "Read text aloud using Web Speech API on hover and right-click",
+  "permissions": [
+    "activeTab",
+    "contextMenus",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "all_frames": true
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Text Reader"
+  }
+}
