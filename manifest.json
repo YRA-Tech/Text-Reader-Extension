@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "Text Reader Extension",
-  "version": "0.2",
+  "version": "0.2.2",
   "description": "Read text aloud using Web Speech API on hover and right-click",
   "permissions": [
     "activeTab",
