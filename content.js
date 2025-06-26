@@ -9,7 +9,7 @@ let isLongReading = false; // Track if we're doing a long read (right-click)
 let lastHoverText = ''; // Track last hovered text to prevent repeats
 
 // Configuration
-const HOVER_DELAY = 500; // milliseconds before reading on hover
+const HOVER_DELAY = 300; // milliseconds before reading on hover
 const STOP_ON_MOUSE_MOVE = false; // Changed to false to reduce interruptions
 
 // Initialize speech synthesis
@@ -99,7 +99,11 @@ function speakText(text, isLongRead = false) {
     }
   };
   
-  speechSynthesis.speak(currentUtterance);
+  try {
+    speechSynthesis.speak(currentUtterance);
+  } catch (error) {
+    console.warn('Speech synthesis blocked:', error.message);
+  }
 }
 
 // Process next item in reading queue
