@@ -1,3 +1,4 @@
+(experimental)
 # Text Reader Chrome Extension
 
 A Chrome extension that reads text aloud using the Web Speech API. It supports reading text under the mouse cursor on hover and reading from a specific point to the end of the page via right-click context menu.
